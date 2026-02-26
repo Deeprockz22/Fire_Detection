@@ -1,0 +1,20 @@
+
+============================================================
+  EVALUATION RESULTS
+============================================================
+  Samples evaluated   : 337
+  Elapsed time        : 107.5s  (0.32s/img)
+
+  ── Pixel-Level Metrics ──────────────────────────────
+  Mean IoU (Jaccard)  : 0.5314
+  Mean Precision      : 0.5802
+  Mean Recall         : 0.5728
+  Mean F1             : 0.5741
+  Mean Accuracy       : 0.9914
+
+  ── Detection-Level Metrics (IoU ≥ 0.5) ─────────────
+  TP / FP / FN        : 210 / 4 / 6
+  Detection Precision : 0.9813
+  Detection Recall    : 0.9722
+  Detection F1        : 0.9767
+============================================================
