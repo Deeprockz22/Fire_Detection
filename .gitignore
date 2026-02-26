@@ -1,0 +1,38 @@
+# Fire Detection Repository - Git Ignore
+
+# Large checkpoint files (>100MB - GitHub limit)
+# Download separately from releases or train locally
+checkpoints/*.pt
+*.ckpt
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs (large)
+*.log
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Note: Dataset images included (25 MB) but checkpoints excluded (168 MB each)

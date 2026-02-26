@@ -1,0 +1,231 @@
+D:\FDS\Small_project\Fire Detection\extract_frames.py:153: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed in 3.11. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap()`` or ``pyplot.get_cmap()`` instead.
+  cmap   = cm.get_cmap("hot")
+Processing 224 scenario(s) ΓåÆ D:\FDS\Small_project\Fire Detection\Dataset
+============================================================
+  Γ£ô  A1_small_room_opening_0: 10 frame pairs saved
+  Γ£ô  A2_small_room_opening_50: 10 frame pairs saved
+  Γ£ô  A3_small_room_opening_100: 10 frame pairs saved
+  Γ£ô  A4_medium_room_opening_0: 10 frame pairs saved
+  Γ£ô  A5_medium_room_opening_50: 10 frame pairs saved
+  Γ£ô  A6_medium_room_opening_100: 10 frame pairs saved
+  Γ£ô  A7_large_room_opening_0: 10 frame pairs saved
+  Γ£ô  A8_large_room_opening_50: 10 frame pairs saved
+  Γ£ô  A9_large_room_opening_100: 10 frame pairs saved
+  Γ£ô  B1_n-heptane_medium_room: 10 frame pairs saved
+  Γ£ô  B2_propane_medium_room: 10 frame pairs saved
+  Γ£ô  B3_methane_medium_room: 10 frame pairs saved
+  Γ£ô  B4_acetone_medium_room: 10 frame pairs saved
+  Γ£ô  B5_ethanol_medium_room: 10 frame pairs saved
+  Γ£ô  B6_diesel_medium_room: 10 frame pairs saved
+  Γ£ô  C1_propane_door_closed: 10 frame pairs saved
+  Γ£ô  C2_propane_door_quarter: 10 frame pairs saved
+  Γ£ô  C3_propane_door_half: 10 frame pairs saved
+  Γ£ô  C4_propane_door_three_quarter: 10 frame pairs saved
+  Γ£ô  C5_propane_door_open: 10 frame pairs saved
+  Γ£ô  D1_heptane_wind_0ms: 10 frame pairs saved
+  Γ£ô  D2_heptane_wind_1ms: 10 frame pairs saved
+  Γ£ô  D3_heptane_wind_2ms: 10 frame pairs saved
+  Γ£ô  D4_heptane_wind_3ms: 10 frame pairs saved
+  Γ£ô  D5_heptane_wind_5ms: 10 frame pairs saved
+  Γ£ô  D6_heptane_wind_7ms: 10 frame pairs saved
+  Γ£ô  D7_heptane_wind_10ms: 10 frame pairs saved
+  Γ£ô  E1_fire_center_size_25: 10 frame pairs saved
+  Γ£ô  E2_fire_center_size_50: 10 frame pairs saved
+  Γ£ô  E3_fire_center_size_75: 10 frame pairs saved
+  Γ£ô  E4_fire_corner_size_50: 10 frame pairs saved
+  Γ£ô  E5_fire_near_door_size_50: 10 frame pairs saved
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in EXTREME_TEST_5719
+  Γ£ô  F10_methane_medium_op50: 10 frame pairs saved
+  Γ£ô  F11_propane_small_op15: 10 frame pairs saved
+  Γ£ô  F12_propane_small_op35: 10 frame pairs saved
+  Γ£ô  F13_propane_large_op15: 10 frame pairs saved
+  Γ£ô  F14_propane_large_op35: 10 frame pairs saved
+  Γ£ô  F15_propane_medium_op50: 10 frame pairs saved
+  Γ£ô  F16_propane_medium_op50: 10 frame pairs saved
+  Γ£ô  F17_propane_medium_op75: 10 frame pairs saved
+  Γ£ô  F18_propane_medium_op25: 10 frame pairs saved
+  Γ£ô  F1_n-heptane_small_op50: 10 frame pairs saved
+  Γ£ô  F2_n-heptane_large_op50: 10 frame pairs saved
+  Γ£ô  F3_methane_small_op50: 10 frame pairs saved
+  Γ£ô  F4_methane_large_op50: 10 frame pairs saved
+  Γ£ô  F5_acetone_small_op50: 10 frame pairs saved
+  Γ£ô  F6_acetone_large_op50: 10 frame pairs saved
+  Γ£ô  F7_n-heptane_medium_op50: 10 frame pairs saved
+  Γ£ô  F8_n-heptane_medium_op50: 10 frame pairs saved
+  Γ£ô  F9_methane_medium_op50: 10 frame pairs saved
+  Γ£ô  fuel_variation: 10 frame pairs saved
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R100_diesel_small_op89_sz44
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R10_diesel_large_op81_sz56
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R11_propane_small_op60_sz48
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R12_ethanol_medium_op55_sz38
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R13_acetone_medium_op45_sz36
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R14_ethanol_medium_op74_sz42
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R15_acetone_large_op71_sz46
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R16_methane_medium_op47_sz46
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R17_methane_medium_op84_sz46
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R18_diesel_medium_op82_sz32
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R19_n-heptane_small_op10_sz76
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R1_n-heptane_medium_op50_sz72
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R20_propane_small_op60_sz77
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R21_propane_small_op35_sz66
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R22_diesel_small_op54_sz28
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R23_methane_small_op43_sz28
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R24_ethanol_medium_op41_sz68
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R25_acetone_small_op14_sz41
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R26_ethanol_medium_op36_sz40
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R27_ethanol_large_op74_sz51
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R28_ethanol_small_op64_sz44
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R29_n-heptane_large_op54_sz47
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R2_ethanol_large_op55_sz53
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R30_diesel_large_op80_sz52
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R31_propane_small_op63_sz36
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R32_acetone_medium_op25_sz48
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R33_methane_medium_op24_sz47
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R34_methane_small_op78_sz77
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R35_acetone_large_op73_sz60
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R36_propane_medium_op55_sz52
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R37_ethanol_large_op68_sz54
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R38_methane_small_op86_sz61
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R39_propane_large_op60_sz37
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R3_ethanol_medium_op28_sz27
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R40_methane_small_op31_sz45
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R41_acetone_small_op15_sz39
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R42_methane_medium_op72_sz59
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R43_methane_large_op27_sz79
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R44_ethanol_large_op88_sz38
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R45_diesel_medium_op80_sz40
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R46_n-heptane_medium_op71_sz74
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R47_ethanol_small_op68_sz56
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R48_methane_large_op62_sz22
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R49_acetone_medium_op28_sz33
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R4_diesel_medium_op64_sz35
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R50_diesel_large_op85_sz44
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R51_n-heptane_medium_op16_sz68
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R52_acetone_small_op38_sz37
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R53_methane_medium_op15_sz70
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R54_ethanol_small_op23_sz71
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R55_acetone_small_op79_sz75
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R56_n-heptane_small_op79_sz49
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R57_acetone_medium_op55_sz36
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R58_ethanol_large_op70_sz24
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R59_methane_large_op60_sz25
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R5_acetone_large_op51_sz40
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R60_ethanol_small_op37_sz22
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R61_ethanol_medium_op50_sz48
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R62_propane_medium_op32_sz49
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R63_diesel_large_op55_sz65
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R64_n-heptane_medium_op50_sz35
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R65_methane_large_op59_sz41
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R66_diesel_large_op79_sz48
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R67_propane_small_op41_sz35
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R68_acetone_medium_op65_sz32
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R69_acetone_small_op11_sz65
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R6_acetone_small_op80_sz55
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R70_propane_medium_op56_sz44
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R71_acetone_medium_op80_sz75
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R72_propane_small_op17_sz80
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R73_diesel_small_op66_sz54
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R74_propane_small_op71_sz48
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R75_propane_small_op25_sz67
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R76_acetone_small_op85_sz52
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R77_propane_small_op47_sz78
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R78_diesel_medium_op82_sz33
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R79_n-heptane_small_op41_sz38
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R7_methane_medium_op44_sz55
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R80_diesel_small_op81_sz54
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R81_n-heptane_medium_op21_sz36
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R82_propane_small_op22_sz61
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R83_propane_large_op61_sz51
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R84_propane_medium_op50_sz42
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R85_diesel_small_op78_sz63
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R86_methane_medium_op47_sz40
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R87_ethanol_small_op86_sz45
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R88_methane_medium_op56_sz22
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R89_acetone_small_op63_sz66
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R8_ethanol_large_op80_sz51
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R90_n-heptane_large_op86_sz57
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R91_methane_medium_op82_sz52
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R92_acetone_large_op31_sz75
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R93_methane_large_op59_sz68
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R94_n-heptane_small_op63_sz28
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R95_diesel_small_op49_sz42
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R96_diesel_small_op69_sz41
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R97_acetone_medium_op88_sz76
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R98_ethanol_large_op81_sz27
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R99_acetone_large_op67_sz52
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in R9_acetone_large_op51_sz33
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S10_GROWTH_FAST_ETHANOL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S11_GROWTH_FAST_N-HEPTANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S12_GROWTH_SLOW_ACETONE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S13_GROWTH_FAST_DIESEL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S14_GROWTH_FAST_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S15_GROWTH_SLOW_METHANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S16_GROWTH_FAST_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S17_GROWTH_FAST_DIESEL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S18_GROWTH_FAST_METHANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S19_GROWTH_FAST_DIESEL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S1_GROWTH_FAST_PROPANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S20_GROWTH_SLOW_ETHANOL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S21_DECAY_ETHANOL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S22_DECAY_DIESEL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S23_DECAY_DIESEL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S24_DECAY_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S25_DECAY_DIESEL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S26_DECAY_DIESEL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S27_DECAY_PROPANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S28_DECAY_DIESEL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S29_DECAY_DIESEL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S2_GROWTH_SLOW_METHANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S30_DECAY_ACETONE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S31_DECAY_METHANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S32_DECAY_ETHANOL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S33_DECAY_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S34_DECAY_ACETONE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S35_DECAY_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S36_PULSATING_ETHANOL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S37_PULSATING_DIESEL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S38_PULSATING_DIESEL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S39_PULSATING_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S3_GROWTH_FAST_PROPANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S40_PULSATING_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S41_PULSATING_METHANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S42_PULSATING_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S43_PULSATING_ETHANOL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S44_PULSATING_ETHANOL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S45_PULSATING_ACETONE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S46_PULSATING_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S47_PULSATING_N-HEPTANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S48_PULSATING_ACETONE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S49_PULSATING_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S4_GROWTH_SLOW_PROPANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S50_PULSATING_ACETONE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S5_GROWTH_FAST_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S6_GROWTH_SLOW_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S7_GROWTH_SLOW_N-HEPTANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S8_GROWTH_FAST_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in S9_GROWTH_FAST_DIESEL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in VALIDATION_TEST2_METHANE_medium_op40
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in VALIDATION_TEST_PROPANE_small_op80
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W10_WIND_3_4ms_ETHANOL_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W11_WIND_1_9ms_N-HEPTANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W12_WIND_4_6ms_METHANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W13_WIND_2_9ms_PROPANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W14_WIND_1_4ms_N-HEPTANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W15_WIND_4_4ms_METHANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W16_WIND_1_1ms_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W17_WIND_4_8ms_PROPANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W18_WIND_4_6ms_ACETONE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W19_WIND_4_0ms_DODECANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W1_WIND_2_9ms_DODECANE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W20_WIND_2_0ms_ETHANOL_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W2_WIND_5_0ms_DODECANE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W3_WIND_1_5ms_ETHANOL_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W4_WIND_4_6ms_DODECANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W5_WIND_4_3ms_ACETONE_medium
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W6_WIND_1_1ms_METHANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W7_WIND_1_8ms_ACETONE_small
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W8_WIND_1_4ms_N-HEPTANE_large
+  [SKIP] Missing slices: ['TEMPERATURE', 'HRRPUV'] in W9_WIND_3_6ms_METHANE_large
+
+Done. 51/224 scenarios exported.
+Next step: run prepare_dataset.py
