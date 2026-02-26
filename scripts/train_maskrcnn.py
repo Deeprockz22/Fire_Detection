@@ -45,9 +45,9 @@ MOMENTUM     = 0.9
 WEIGHT_DECAY = 0.0005
 LR_STEP_SIZE = 8        # Decay LR every N epochs
 LR_GAMMA     = 0.1
-
-CHECKPOINTS_DIR = Path(r"D:\FDS\Small_project\Fire Detection\checkpoints")
-LOGS_DIR        = Path(r"D:\FDS\Small_project\Fire Detection\logs")
+BASE_DIR        = Path(__file__).parent.parent
+CHECKPOINTS_DIR = BASE_DIR / "checkpoints"
+LOGS_DIR        = BASE_DIR / "logs"
 # ==============================================================================
 
 

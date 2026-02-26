@@ -36,10 +36,10 @@ NUM_CLASSES  = 2
 SCORE_THR    = 0.5   # minimum confidence to accept a predicted mask
 MASK_THR     = 0.5   # sigmoid threshold to binarize predicted soft mask
 IOU_THR      = 0.5   # IoU threshold used for mAP@0.5
-
-CHECKPOINTS_DIR = Path(r"D:\FDS\Small_project\Fire Detection\checkpoints")
-MANIFEST_PATH   = Path(r"D:\FDS\Small_project\Fire Detection\Dataset\manifest.csv")
-RESULTS_PATH    = Path(r"D:\FDS\Small_project\Fire Detection\logs\evaluation_results.txt")
+BASE_DIR        = Path(__file__).parent.parent
+CHECKPOINTS_DIR = BASE_DIR / "checkpoints"
+MANIFEST_PATH   = BASE_DIR / "Dataset" / "manifest.csv"
+RESULTS_PATH    = BASE_DIR / "logs" / "evaluation_results.txt"
 # ==============================================================================
 
 

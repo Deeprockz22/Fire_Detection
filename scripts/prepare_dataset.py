@@ -23,7 +23,8 @@ from PIL import Image
 import numpy as np
 
 # ==============================================================================
-DATASET_DIR   = Path(r"D:\FDS\Small_project\Fire Detection\Dataset")
+BASE_DIR      = Path(__file__).parent.parent
+DATASET_DIR   = BASE_DIR / "Dataset"
 TRAIN_RATIO   = 0.70
 VAL_RATIO     = 0.15
 # TEST_RATIO  = 0.15 (remainder)

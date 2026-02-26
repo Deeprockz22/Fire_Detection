@@ -36,8 +36,10 @@ from PIL import Image
 # ==============================================================================
 # CONFIGURATION
 # ==============================================================================
-FDS_SCENARIOS_DIR = Path(r"D:\FDS\Small_project\fds_scenarios")
-OUTPUT_DIR        = Path(r"D:\FDS\Small_project\Fire Detection\Dataset")
+BASE_DIR          = Path(__file__).parent.parent
+PROJECT_ROOT      = BASE_DIR.parent
+FDS_SCENARIOS_DIR = PROJECT_ROOT / "fds_scenarios"
+OUTPUT_DIR        = BASE_DIR / "Dataset"
 
 INPUT_QUANTITY    = "TEMPERATURE"   # used as the model input image
 MASK_QUANTITY     = "HRRPUV"        # used as the binary fire mask

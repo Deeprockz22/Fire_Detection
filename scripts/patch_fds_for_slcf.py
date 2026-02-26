@@ -22,7 +22,8 @@ import shutil
 from pathlib import Path
 
 # ==============================================================================
-FDS_SCENARIOS_DIR = Path(r"D:\FDS\Small_project\fds_scenarios")
+PROJECT_ROOT      = Path(__file__).parent.parent.parent
+FDS_SCENARIOS_DIR = PROJECT_ROOT / "fds_scenarios"
 FDS_EXE = r"D:\FDS\FDS6\bin\fds_local.bat"
 
 # Prefixes of scenarios that need patching (SMOKF3D series)
