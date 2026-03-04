@@ -166,6 +166,36 @@ def print_section(title):
     print()
 
 # ============================================================================
+# UTILITY FUNCTIONS
+# ============================================================================
+def find_fds_installation():
+    """Detect FDS installation and return path if found"""
+    # Common FDS installation paths (Windows)
+    search_paths = [
+        Path("D:/FDS/FDS6/bin/fds_local.bat"),
+        Path("D:/FDS/FDS6/bin/fds.exe"),
+        Path("C:/FDS/FDS6/bin/fds.exe"),
+        Path("C:/Program Files/FDS/FDS6/bin/fds.exe"),
+        Path("C:/Program Files (x86)/FDS/FDS6/bin/fds.exe"),
+        Path.home() / "FDS" / "FDS6" / "bin" / "fds.exe",
+        Path.home() / "FDS" / "bin" / "fds.exe",
+    ]
+    
+    # Check environment variable
+    fds_env = os.environ.get('FDS_PATH')
+    if fds_env:
+        env_path = Path(fds_env)
+        if env_path.exists():
+            return env_path
+    
+    # Check common paths
+    for path in search_paths:
+        if path.exists():
+            return path
+    
+    return None
+
+# ============================================================================
 # VISION UTILS
 # ============================================================================
 def build_model(num_classes):
@@ -620,8 +650,8 @@ def action_setup_wizard():
     print("Welcome to the Fire Detection Tool setup!\n")
     print("This wizard will help you get started.\n")
     
-    # Check dependencies
-    print("Step 1/3: Checking dependencies...\n")
+    # Step 1: Check dependencies
+    print("Step 1/4: Checking Python dependencies...\n")
     missing = []
     for pkg in ["torch", "torchvision", "numpy", "matplotlib", "PIL"]:
         try:
@@ -638,16 +668,78 @@ def action_setup_wizard():
         press_enter()
         return
     
-    # Create directories
-    print("\nStep 2/3: Creating directories...\n")
+    # Step 2: Check FDS installation
+    print("\nStep 2/4: Checking FDS (Fire Dynamics Simulator)...\n")
+    
+    fds_found = find_fds_installation()
+    
+    if fds_found:
+        print(f"  ✅ FDS found at: {fds_found}")
+        print(f"     You can generate FDS scenarios for training data!")
+    else:
+        print("  ⚠️  FDS not detected in common locations")
+        print("\n  💡 FDS is OPTIONAL for this tool:")
+        print("     • WITHOUT FDS: Use existing images or pre-made datasets")
+        print("     • WITH FDS: Generate unlimited synthetic fire scenarios")
+        
+        print("\n  Do you want to install FDS?")
+        print("    1. Yes - Show me installation instructions")
+        print("    2. No - Skip (I'll use existing images)")
+        print("    3. I have FDS elsewhere - Specify path")
+        
+        fds_choice = input("\n  Choose [1/2/3]: ").strip()
+        
+        if fds_choice == '1':
+            print("\n  " + "═" * 66)
+            print("  📥 FDS INSTALLATION GUIDE")
+            print("  " + "═" * 66)
+            print("\n  FDS (Fire Dynamics Simulator) is free NIST software.")
+            print("  It simulates fire and smoke transport for research.")
+            print("\n  Official Download:")
+            print("  🔗 https://pages.nist.gov/fds-smv/downloads.html")
+            print("\n  Installation Steps:")
+            print("    1. Visit the official NIST FDS download page")
+            print("    2. Download 'FDS-SMV Bundle' for Windows")
+            print("    3. Run the installer (recommended: C:/FDS/FDS6/)")
+            print("    4. After install, re-run this setup wizard")
+            print("\n  File size: ~350 MB")
+            print("  License: Public domain (NIST software)")
+            print("  Time: 5-10 minutes")
+            print("\n  " + "═" * 66)
+            
+            open_url = input("\n  Open download page in browser? [Y/n]: ").strip().lower()
+            if not open_url or open_url == 'y':
+                try:
+                    import webbrowser
+                    webbrowser.open("https://pages.nist.gov/fds-smv/downloads.html")
+                    print("  ✅ Opened in browser")
+                except:
+                    print("  ⚠️  Could not open browser automatically")
+                    print("     Copy link: https://pages.nist.gov/fds-smv/downloads.html")
+        
+        elif fds_choice == '3':
+            custom_fds = input("\n  Enter FDS executable path: ").strip().strip('"').strip("'")
+            if custom_fds and Path(custom_fds).exists():
+                print(f"  ✅ FDS found at: {custom_fds}")
+                print(f"     Set FDS_PATH environment variable for auto-detection:")
+                print(f"     setx FDS_PATH \"{custom_fds}\"")
+            else:
+                print("  ⚠️  Path not found - you can set it up later")
+        
+        else:
+            print("\n  ✅ No problem! This tool works great without FDS.")
+            print("     You can use existing images or pre-made datasets.")
+    
+    # Step 3: Create directories
+    print("\nStep 3/4: Creating directories...\n")
     for label, path in [("Input", INPUT_DIR), ("Output", OUTPUT_DIR), 
                          ("Dataset", DATA_DIR), ("Checkpoints", CKPT_DIR),
                          ("Logs", LOGS_DIR), ("Docs", DOCS_DIR)]:
         path.mkdir(exist_ok=True)
         print(f"  ✅ {label}: {path}")
     
-    # Check for model and dataset
-    print("\nStep 3/3: Checking model and dataset...\n")
+    # Step 4: Check for model and dataset
+    print("\nStep 4/4: Checking model and dataset...\n")
     
     if not MODEL_PATH.exists():
         print("  ⚠️  Model checkpoint not found")
@@ -911,14 +1003,22 @@ def action_diagnostics():
         except:
             pass
     
+    # Check for FDS installation
+    fds_exe = find_fds_installation()
+    if fds_exe:
+        print(f"\n  ✅ FDS Installation:    {fds_exe}")
+    else:
+        print(f"\n  ⚠️  FDS Installation:    Not found (optional)")
+        print(f"     Run --setup for installation guide")
+    
     # Check for FDS scenarios
     PROJECT_ROOT = BASE_DIR.parent
     FDS_SCENARIOS_DIR = PROJECT_ROOT / "fds_scenarios"
     if FDS_SCENARIOS_DIR.exists():
         scenario_count = len([d for d in FDS_SCENARIOS_DIR.iterdir() if d.is_dir()])
-        print(f"\n  {'✅' if scenario_count > 0 else '⚠️'} FDS Scenarios:       {scenario_count} scenarios found")
+        print(f"  {'✅' if scenario_count > 0 else '⚠️'} FDS Scenarios Folder: {scenario_count} scenarios found")
     else:
-        print(f"\n  ⚠️  FDS Scenarios:       Not found (optional)")
+        print(f"  ⚠️  FDS Scenarios Folder: Not found (optional)")
     
     print(f"\n{'═' * 70}")
     if MODEL_PATH.exists() and MANIFEST.exists():
@@ -927,6 +1027,11 @@ def action_diagnostics():
         print("⚠️  Model checkpoint missing - train a model first")
     elif not MANIFEST.exists():
         print("⚠️  Dataset not prepared - use 'Prepare Dataset' menu")
+    
+    if not fds_exe and not FDS_SCENARIOS_DIR.exists():
+        print("\n💡 TIP: You can still use this tool with manual images!")
+        print("   Just place .png/.jpg in Input/ folder for predictions.")
+    
     print("═" * 70)
     
     press_enter()
