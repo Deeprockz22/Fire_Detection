@@ -24,7 +24,33 @@ from pathlib import Path
 # ==============================================================================
 PROJECT_ROOT      = Path(__file__).parent.parent.parent
 FDS_SCENARIOS_DIR = PROJECT_ROOT / "fds_scenarios"
-FDS_EXE = r"D:\FDS\FDS6\bin\fds_local.bat"
+
+# Auto-detect FDS installation
+def find_fds_exe():
+    """Find FDS executable in common locations"""
+    search_paths = [
+        Path("D:/FDS/FDS6/bin/fds_local.bat"),
+        Path("D:/FDS/FDS6/bin/fds.exe"),
+        Path("C:/FDS/FDS6/bin/fds.exe"),
+        Path("C:/Program Files/FDS/FDS6/bin/fds.exe"),
+        Path("C:/Program Files (x86)/FDS/FDS6/bin/fds.exe"),
+        Path.home() / "FDS" / "FDS6" / "bin" / "fds.exe",
+    ]
+    
+    # Check environment variable
+    import os
+    fds_env = os.environ.get('FDS_PATH')
+    if fds_env and Path(fds_env).exists():
+        return str(Path(fds_env))
+    
+    # Check common paths
+    for path in search_paths:
+        if path.exists():
+            return str(path)
+    
+    return None
+
+FDS_EXE = find_fds_exe()
 
 # Prefixes of scenarios that need patching (SMOKF3D series)
 TARGET_PREFIXES = ("R", "S", "W", "EXTREME", "VALIDATION")
@@ -122,6 +148,20 @@ def main():
     parser.add_argument("--dry_run",       action="store_true",
                         help="Show what would change without writing or running anything")
     args = parser.parse_args()
+    
+    # Check if FDS is available
+    if not FDS_EXE:
+        print("❌ FDS executable not found!")
+        print("   Searched common locations:")
+        print("   • D:/FDS/FDS6/bin/")
+        print("   • C:/FDS/FDS6/bin/")
+        print("   • C:/Program Files/FDS/FDS6/bin/")
+        print("\n💡 Solutions:")
+        print("   1. Install FDS from: https://pages.nist.gov/fds-smv/downloads.html")
+        print("   2. Set FDS_PATH environment variable: setx FDS_PATH \"path\\to\\fds.exe\"")
+        return
+    
+    print(f"Using FDS: {FDS_EXE}\n")
 
     if args.scenario:
         dirs_to_patch = [args.scenarios_dir / args.scenario]

@@ -170,8 +170,13 @@ def evaluate(model, data_loader, device):
 
 
 def main():
+    # Get script location for relative path
+    SCRIPT_DIR = Path(__file__).parent
+    PROJECT_DIR = SCRIPT_DIR.parent
+    DEFAULT_MANIFEST = PROJECT_DIR / "Dataset" / "manifest.csv"
+    
     parser = argparse.ArgumentParser()
-    parser.add_argument("--manifest",    type=Path, default=Path(r"D:\FDS\Small_project\Fire Detection\Dataset\manifest.csv"))
+    parser.add_argument("--manifest",    type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--epochs",      type=int,  default=NUM_EPOCHS)
     parser.add_argument("--batch_size",  type=int,  default=BATCH_SIZE)
     parser.add_argument("--lr",          type=float, default=LR)
