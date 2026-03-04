@@ -5,6 +5,12 @@
 checkpoints/*.pt
 *.ckpt
 
+# FDS Scenarios (large simulation files)
+# Users should create their own ../fds_scenarios/ folder locally
+# and populate it with FDS simulation outputs
+../fds_scenarios/
+fds_scenarios/
+
 # Python cache
 __pycache__/
 *.pyc
