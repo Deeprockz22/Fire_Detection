@@ -364,24 +364,61 @@ def action_assimilate_scenarios():
     PROJECT_ROOT = BASE_DIR.parent
     FDS_SCENARIOS_DIR = PROJECT_ROOT / "fds_scenarios"
     
+    print("This feature imports FDS simulation data from an fds_scenarios folder.\n")
+    
     if not FDS_SCENARIOS_DIR.exists():
-        print(f"❌ FDS scenarios directory not found: {FDS_SCENARIOS_DIR}")
-        print("\n💡 How to set up fds_scenarios:")
-        print(f"   1. Create folder: {PROJECT_ROOT}/fds_scenarios/")
-        print(f"   2. Add FDS simulation outputs (one folder per scenario)")
-        print(f"   3. Each scenario needs .smv and .sf files")
-        print(f"\n   Example structure:")
-        print(f"   {PROJECT_ROOT}/")
-        print(f"   ├── fds_scenarios/           ← Create this folder")
-        print(f"   │   ├── scenario1/            ← Add your scenarios here")
-        print(f"   │   │   ├── scenario1.fds")
-        print(f"   │   │   ├── scenario1.smv")
-        print(f"   │   │   └── scenario1_*.sf   (slice files)")
-        print(f"   │   └── scenario2/")
-        print(f"   └── Fire Detection/          ← You are here")
-        print(f"\n💡 You can generate scenarios with fire_predict.py FDS generator")
-        print(f"   or use existing FDS simulation outputs.")
-        return
+        print(f"📂 FDS scenarios folder not found at default location:")
+        print(f"   {FDS_SCENARIOS_DIR}\n")
+        
+        print("Options:")
+        print("  1. Create folder at default location")
+        print("  2. Specify custom location")
+        print("  3. Skip (this feature is optional)\n")
+        
+        choice = input("Choose [1/2/3]: ").strip()
+        
+        if choice == '1':
+            try:
+                FDS_SCENARIOS_DIR.mkdir(parents=True, exist_ok=True)
+                print(f"\n✅ Created folder: {FDS_SCENARIOS_DIR}")
+                print("\n💡 Next steps:")
+                print("   1. Add FDS simulation folders to this directory")
+                print("   2. Each scenario should contain .fds, .smv, and .sf files")
+                print("   3. Run this assimilation feature again to process them")
+                press_enter()
+                return
+            except Exception as e:
+                print(f"\n❌ Failed to create folder: {e}")
+                press_enter()
+                return
+                
+        elif choice == '2':
+            custom_path = input("\nEnter path to FDS scenarios folder: ").strip().strip('"').strip("'")
+            if not custom_path:
+                print("❌ No path provided")
+                press_enter()
+                return
+            FDS_SCENARIOS_DIR = Path(custom_path)
+            if not FDS_SCENARIOS_DIR.exists():
+                print(f"❌ Directory not found: {FDS_SCENARIOS_DIR}")
+                press_enter()
+                return
+            print(f"\n✅ Using custom location: {FDS_SCENARIOS_DIR}\n")
+        
+        elif choice == '3':
+            print("\n💡 This feature is optional.")
+            print("   You can still:")
+            print("   • Use 'Quick Predict' on individual images")
+            print("   • Train with existing Dataset")
+            print("   • Use other menu options")
+            press_enter()
+            return
+        else:
+            print("❌ Invalid choice")
+            press_enter()
+            return
+    else:
+        print(f"✅ Found FDS scenarios folder: {FDS_SCENARIOS_DIR}\n")
     
     print(f"Scanning: {FDS_SCENARIOS_DIR}\n")
     
@@ -629,11 +666,10 @@ def action_setup_wizard():
     print("═" * 70)
     
     print("\n📖 Quick Start Guide:")
-    print("  1. Create ../fds_scenarios/ folder (not included in repo)")
-    print("  2. Add FDS simulation outputs to fds_scenarios/")
-    print("  3. Use 'Prepare Dataset' → 'Assimilate New Scenarios'")
-    print("  4. Train model with 'Train Model'")
-    print("  5. Make predictions with 'Quick Predict'")
+    print("  fds_scenarios is OPTIONAL - choose your workflow:")
+    print("  • WITH fds_scenarios: Auto-generate dataset from FDS sims")
+    print("  • WITHOUT: Use existing Dataset/ or Input/ images")
+    print("\n  Setup wizard complete - ready to use!")
     
     press_enter()
 
@@ -655,31 +691,60 @@ def action_help():
         if c == '1':
             print_section("📖 QUICK START GUIDE")
             print("Getting Started with Fire Detection:\n")
-            print("1️⃣  PREPARE DATA")
-            print("   • Create folder: project_root/fds_scenarios/")
-            print("   • Add FDS simulation outputs (or generate with fire_predict.py)")
-            print("   • Each scenario needs .fds, .smv, and .sf files")
-            print("   • Use 'Prepare Dataset' → 'Assimilate New Scenarios'\n")
+            print("⚠️  NOTE: fds_scenarios folder is OPTIONAL!\n")
             
-            print("2️⃣  TRAIN MODEL")
+            print("🔥 TWO WAYS TO USE THIS TOOL:\n")
+            
+            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("📁 OPTION A: With fds_scenarios (Automated Dataset Generation)")
+            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("1️⃣  Create ../fds_scenarios/ folder")
+            print("   • Tool can auto-detect and offer to create it")
+            print("   • Or specify custom path during assimilation\n")
+            
+            print("2️⃣  Add FDS simulation outputs")
+            print("   • Generate with fire_predict.py FDS generator")
+            print("   • Or copy existing FDS simulations")
+            print("   • Each needs .fds, .smv, and .sf files\n")
+            
+            print("3️⃣  Use 'Assimilate New Scenarios'")
+            print("   • Automatically extracts training images")
+            print("   • Creates labeled fire masks from HRRPUV data")
+            print("   • Builds Dataset/ folder with manifest.csv\n")
+            
+            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("🖼️  OPTION B: Without fds_scenarios (Manual Images)")
+            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("1️⃣  Use existing Dataset/ folder (if you have one)")
+            print("   • Pre-prepared datasets work fine\n")
+            
+            print("2️⃣  OR place images directly in Input/")
+            print("   • Works with any .png/.jpg fire images")
+            print("   • Use 'Quick Predict' for inference only\n")
+            
+            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("🧠 THEN: Train Model")
             print("   • Use 'Train Model' from main menu")
-            print("   • Requires GPU for reasonable speed")
-            print("   • Monitor training in logs/\n")
+            print("   • Works with either approach above\n")
             
-            print("3️⃣  MAKE PREDICTIONS")
-            print("   • Use 'Quick Predict' for single images")
-            print("   • Use 'Evaluate Test Set' for batch metrics")
-            print("   • Use 'Generate Viz Grid' for visual comparison\n")
-            
-            print("4️⃣  ITERATE")
-            print("   • Add more scenarios and retrain")
-            print("   • Adjust hyperparameters in train_maskrcnn.py")
-            print("   • Evaluate and improve\n")
+            print("🎯 FINALLY: Make Predictions")
+            print("   • Quick Predict, Evaluate, or Generate Grids")
+            print("   • Works on any fire images\n")
             
             press_enter()
             
         elif c == '2':
             print_section("❓ FREQUENTLY ASKED QUESTIONS")
+            
+            print("Q: Is fds_scenarios folder required?")
+            print("A: NO - it's completely optional! You can use this tool without it.")
+            print("   • If you HAVE fds_scenarios: Auto-import FDS simulation data")
+            print("   • If you DON'T: Use manual images or existing Dataset\n")
+            
+            print("Q: What is fds_scenarios used for?")
+            print("A: It's a source of FDS simulation outputs for automated dataset generation.")
+            print("   If present, the tool can extract training images from simulations.\n")
+            
             print("Q: Where do I get FDS scenarios?")
             print("A: Create ../fds_scenarios/ folder and add FDS simulation outputs,")
             print("   OR generate them with fire_predict.py FDS generator\n")
@@ -692,18 +757,14 @@ def action_help():
             print("A: 2-4 hours on GPU for ~1000 images, much longer on CPU\n")
             
             print("Q: Can I use my own fire images?")
-            print("A: Yes! Place .png/.jpg in Input/ and use Quick Predict\n")
+            print("A: YES! Place .png/.jpg in Input/ and use Quick Predict")
+            print("   Works with any fire images, not just FDS data\n")
             
             print("Q: What accuracy can I expect?")
             print("A: Typically >90% IoU on synthetic fire images\n")
             
             print("Q: Do I need CUDA/GPU?")
             print("A: Recommended for training, but CPU works for inference\n")
-            
-            print("Q: The fds_scenarios folder doesn't exist, what do I do?")
-            print("A: Create it manually in the project root directory:")
-            print("   mkdir ../fds_scenarios")
-            print("   Then add your FDS simulation folders inside it\n")
             
             press_enter()
             
